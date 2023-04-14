@@ -15,7 +15,7 @@ app.use('/user', userRouter);
 const dbConnection = async () =>{
     try{
         await mongoose.connect(
-            `mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@user-management-db.mtwlz3w.mongodb.net/user-management-db?retryWrites=true&w=majority`
+            `mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@user-management-db.mtwlz3w.mongodb.net/?retryWrites=true&w=majority`
         )
         console.log('Database Connected');
         await app.listen(PORT, () => console.log('Server is running on port ' + PORT));
